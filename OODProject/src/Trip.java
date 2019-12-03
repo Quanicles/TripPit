@@ -1,15 +1,16 @@
 import java.util.ArrayList;
 
-
-
 public class Trip {
-	ArrayList<Integer> tripid = new ArrayList<Integer>(); 
+	ArrayList<String> agent = new ArrayList<String>();
+	String id;
 	ArrayList<java.lang.String> travelers = new ArrayList<String>();
 	ArrayList<String> packages = new ArrayList<String>();
 	ArrayList<String> paymentPerson = new ArrayList<String>();
 	ArrayList<String> paymentType = new ArrayList<String>();
 	double pa =0;
 	int pt =0;
+	int paymentStatus = 0;
+	String tripCreator;
 	private TripState state = new createTrip();
 	 
     // getter, setter
@@ -33,7 +34,7 @@ public class Trip {
     	
 		
 
-		state.action(tripid,travelers,packages,paymentPerson,paymentType);
+		state.action(agent,id,travelers,packages,paymentPerson,paymentType, pa, pt,paymentStatus, tripCreator);
     }
-
+    
 }
