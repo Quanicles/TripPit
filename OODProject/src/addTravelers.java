@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+
+
+public class addTravelers implements TripState {
+
+	
+	@Override
+	public void prev(Trip t) {
+		// TODO Auto-generated method stub
+		t.setState(new createTrip());
+	}
+
+	@Override
+	public void next(Trip t) {
+		// TODO Auto-generated method stub
+		t.setState(new addPacakges());
+		
+	}
+
+	@Override
+	public void action(ArrayList<Integer> tripid, ArrayList<String> travelers, ArrayList<String> packages,
+			ArrayList<String> paymentPerson, ArrayList<String> paymentType) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
