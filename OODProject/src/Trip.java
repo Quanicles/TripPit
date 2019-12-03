@@ -11,6 +11,7 @@ public class Trip {
 	int pt =0;
 	int paymentStatus = 0;
 	String tripCreator;
+	String ppaying;
 	private TripState state = new createTrip();
 	 
     // getter, setter
@@ -34,7 +35,7 @@ public class Trip {
     	
 		
 
-		state.action(agent,id,travelers,packages,paymentPerson,paymentType, pa, pt,paymentStatus, tripCreator);
+		state.action(agent,id,travelers,packages,paymentPerson,paymentType, pa, pt,paymentStatus, tripCreator, ppaying);
     }
     
 }

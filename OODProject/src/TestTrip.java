@@ -9,6 +9,7 @@ public class TestTrip {
 		Trip t = new Trip();
 		
 		t.action();
+		
 	}
 
 }

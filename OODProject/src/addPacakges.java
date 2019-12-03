@@ -18,7 +18,7 @@ public class addPacakges implements TripState {
 
 	@Override
 	public void action(ArrayList<String> agent, String id, ArrayList<String> travelers, ArrayList<String> packages,
-			ArrayList<String> paymentPerson, ArrayList<String> paymentType, double pa, int pt, int paymentStatus, String tripCreator) {
+			ArrayList<String> paymentPerson, ArrayList<String> paymentType, double pa, int pt, int paymentStatus, String tripCreator, String ppaying) {
 		// TODO Auto-generated method stub
 
 	}
