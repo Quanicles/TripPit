@@ -29,11 +29,21 @@ public class AddTravelers implements TripState {
         System.out.println("Enter the name of the people travelling with you. Enter \"done\"  when you're finished.");
         String person = scan.nextLine();
 
-        while(!person.equalsIgnoreCase("done")) {
+        while(!person.equalsIgnoreCase("done") ) {
             travelers.add(person);
             person = scan.nextLine();
+            if(person.equalsIgnoreCase("later")) {
+            	break;
+            }
         }
+        if(person.equalsIgnoreCase("done")) {
         next(t);
+        }
+        
+        // change to implementation for write factor here
+        else if(person.equalsIgnoreCase("later")) {
+        	System.out.println("Saving trip " + id + " for later");
+        }
 
     }
 

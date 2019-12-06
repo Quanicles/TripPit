@@ -1,2 +1,0 @@
-# TripPit
-Trip planning application

@@ -20,6 +20,10 @@ public class ThankYouNote implements TripState {
     public void action(Trip t, ArrayList<String> agent, String id, ArrayList<String> travelers, ArrayList<String> packages,
                        ArrayList<String> paymentPerson, ArrayList<String> paymentType, double pa, int pt, int paymentStatus, String tripCreator) {
         // TODO Auto-generated method stub
+    	
+    	System.out.println("You're trip has now been schedule \n Youe will be traveling to blank from blank."
+    			+ "\n With (list people on the trip). \n Your trip total is $ and is payedinfull.");
+    	
 
         next(t);
     }
