@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class payCheck implements TripState {
+
     boolean payedinFull;
     int triptotal;
-
+    long checkNumber;
+    
+    
     @Override
     public void prev(Trip t) {
         // TODO Auto-generated method stub
