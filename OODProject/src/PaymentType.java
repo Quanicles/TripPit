@@ -19,21 +19,28 @@ public class PaymentType implements TripState {
         if(ptype == 1) {
             t.setState(new payCash());
         }
-        else {
+        else if(ptype == 2){
             t.setState(new payCheck());
-        }
+        } else
+            t.setState(new payCard());
         t.nextState();
 
     }
 
     @Override
-    public void action(Trip t, List<String> agent, String id, ArrayList<String> travelers, List<String> packages,
-                       ArrayList<String> paymentPerson, ArrayList<String> paymentType, double pa, int pt, int paymentStatus, String tripCreator) {
+    public void action(Trip t) {
         // TODO Auto-generated method stub
 
         //prompt user to select payment type
-        System.out.println("Enter your payment type. \n1 for cash \n2 for check");
+        System.out.println("Enter your payment type. \n1 for cash \n2 for check \n 3 for credit");
         ptype = scan.nextInt();
+        if(ptype == 1)
+            t.paymentType = "cash";
+        else if(ptype == 2)
+            t.paymentType = "check";
+        else if(ptype == 3)
+            t.paymentType = "credit";
+
         next(t);
     }
 

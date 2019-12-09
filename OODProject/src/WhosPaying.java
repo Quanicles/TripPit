@@ -21,20 +21,20 @@ public class WhosPaying implements TripState {
     }
 
     @Override
-    public void action(Trip t, List<String> agent, String id, ArrayList<String> travelers, List<String> packages,
-                       ArrayList<String> paymentPerson, ArrayList<String> paymentType, double pa, int pt, int paymentStatus, String tripCreator) {
+    public void action(Trip t) {
         // TODO Auto-generated method stub
 
-        System.out.println("Select the person responsible for paying from the list below: ");
+        System.out.println("This trip cost $" + t.pt + " Select the person responsible for paying from the list below: ");
 
         //replace with the singleton class
-        for(String traveler: travelers) {
+        for(String traveler: t.travelers) {
             System.out.println(traveler);
         }
-        String personPaying= scan.next();
+        String personPaying = scan.next();
 
         //checks that someone is paying before moving to the next state;
-        if(travelers.contains(personPaying)) {
+        if(t.travelers.contains(personPaying)) {
+            t.paymentPerson = personPaying;
             next(t);
         }
         // Saves to write Strategy class

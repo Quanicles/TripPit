@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class payCash implements TripState {
+public class payCard implements TripState {
     boolean payedinFull;
     int triptotal;
     Scanner scan = new Scanner(System.in);
@@ -26,14 +26,18 @@ public class payCash implements TripState {
     @Override
     public void action(Trip t) {
         // TODO Auto-generated method stub
+        int number, date, cvs;
+        System.out.println(t.paymentPerson + " you owe " + t.pt + " and will be paying in Card. \n Enter Card number");
+        number = scan.nextInt();
+        System.out.println("Enter card expiration date.");
+        date = scan.nextInt();
+        System.out.println("Enter cvs code.");
+        cvs = scan.nextInt();
 
-        System.out.println(t.paymentPerson + " you owe " + t.pt + " and will be paying in cash. \n how much cash will you be paying with at this moment?");
+        System.out.println("Card approved. You owe $" + t.pt + " how much will you be paying?");
         t.pa = scan.nextDouble();
 
         t.paymentStatus = t.pa;
-
-
-
         // logic behind pay as you go
         if (t.pa != t.pt) {
             payedinFull = false;

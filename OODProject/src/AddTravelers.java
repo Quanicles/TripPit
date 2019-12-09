@@ -23,11 +23,11 @@ public class AddTravelers implements TripState {
     }
 
     @Override
-    public void action(Trip t, List<String> agent, String id, ArrayList<String> travelers, List<String> packages,
-                       ArrayList<String> paymentPerson, ArrayList<String> paymentType, double pa, int pt, int paymentStatus, String tripCreator) {
+    public void action(Trip t) {
         // TODO Auto-generated method stub
 
         PersonSingleton personSingleton = null;
+        boolean isCorrect = false;
 
         List<String> currentPeople = personSingleton.getPeople();
         
@@ -39,22 +39,32 @@ public class AddTravelers implements TripState {
         System.out.println("Enter the name of the people travelling with you. Enter \"done\"  when you're finished.");
         String person = scan.nextLine();
 
+
         while(!person.equalsIgnoreCase("done") ) {
-            travelers.add(person);
+            while(!isCorrect)
+            {
+                for(int i = 0; i < currentPeople.size(); i++)
+                {
+                    if(person.equalsIgnoreCase(currentPeople.get(i)))
+                    {
+                        isCorrect = true;
+                    }
+
+                }
+                if(!isCorrect) {
+                    System.out.println("Please enter a valid name from the list provided");
+                    person = scan.nextLine();
+                }
+            }
+            t.travelers.add(person);
             person = scan.nextLine();
+            isCorrect = false;
             if(person.equalsIgnoreCase("later")) {
                 break;
             }
-        }
-        if(person.equalsIgnoreCase("done")) {
+          }
+
             next(t);
-        }
-
-        // change to implementation for write factor here
-        else if(person.equalsIgnoreCase("later")) {
-            System.out.println("Saving trip " + id + " for later");
-        }
-
     }
 
 }

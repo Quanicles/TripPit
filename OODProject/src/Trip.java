@@ -2,18 +2,19 @@ package Flow;
 import Flow.CreateTrip;
 import Flow.TripState;
 
+import java.io.InputStream;
 import java.util.*;
 
 public class Trip {
     List<String> agent;
     String id;
-    ArrayList<String> travelers;
-    List<String> packages;
-    ArrayList<String> paymentPerson = new ArrayList<String>();
-    ArrayList<String> paymentType = new ArrayList<String>();
+    ArrayList<String> travelers = new ArrayList<>();
+    ArrayList<String> packages = new ArrayList<>();
+    String paymentPerson;
+    String paymentType ;
     double pa =0;
-    int pt =0;
-    int paymentStatus = 0;
+    double pt =0;
+    double paymentStatus = 0;
     String tripCreator;
     private TripState state = new CreateTrip();
 
@@ -31,14 +32,14 @@ public class Trip {
     }
 
     public void nextState() {
-        state.action(this, agent,id,travelers,packages,paymentPerson,paymentType, pa, pt,paymentStatus, tripCreator);
+        state.action(this);
     }
 
     void action(){
 
 
 
-        state.action(this, agent,id,travelers,packages,paymentPerson,paymentType, pa, pt,paymentStatus, tripCreator);
+        state.action(this);
 
 
 

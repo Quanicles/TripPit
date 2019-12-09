@@ -12,14 +12,22 @@ final class PackageSingleton
     private PackageSingleton()
     {
         ArrayList<String> placeHolder = new ArrayList<String>();
-        placeHolder.add("ATL to China");
-        placeHolder.add("China to ATL");
-        placeHolder.add("China to Paris");
-        placeHolder.add("ATL to Australia");
+        placeHolder.add("Atlanta, Georgia to Beijing, China");
+        placeHolder.add("Atlanta, Georgia to Sydney, Australia");
+        placeHolder.add("Atlanta, Georgia  to Paris, France");
+        placeHolder.add("Beijing, China to Atlanta, Georgia ");
+        placeHolder.add("Beijing, China to Paris, France");
+        placeHolder.add("Beijing, China to Sydney, Australia");
+        placeHolder.add("Paris, France to Atlanta, Georgia");
+        placeHolder.add("Paris, France to Beijing, China");
+        placeHolder.add("Paris, France to Sydney, Australia");
+        placeHolder.add("Sydney, Australia to Atlanta, Georgia");
+        placeHolder.add("Sydney, Australia to Beijing, China");
+        placeHolder.add("Sydney, Australia to Paris, France");
         packageList = Collections.unmodifiableList(placeHolder);
     }
 
-    public static List getAgents()
+    public static List getPackage()
     {
         if(_packageSingleton == null)
         {

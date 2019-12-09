@@ -2,14 +2,12 @@ package Flow;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class payCheck implements TripState {
-
     boolean payedinFull;
     int triptotal;
-    long checkNumber;
-    
-    
+    Scanner scan = new Scanner(System.in);
     @Override
     public void prev(Trip t) {
         // TODO Auto-generated method stub
@@ -25,16 +23,19 @@ public class payCheck implements TripState {
     }
 
     @Override
-    public void action(Trip t, List<String> agent, String id, ArrayList<String> travelers,
-                       List<String> packages, ArrayList<String> paymentPerson, ArrayList<String> paymentType, double pa,
-                       int pt, int paymentStatus, String tripCreator) {
+    public void action(Trip t) {
         // TODO Auto-generated method stub
-        System.out.println("paying with cash");
+        int checknumber;
+        System.out.println("paying with Check");
+        System.out.println("Enter Check number: ");
+        checknumber = scan.nextInt();
 
-        //Use program flow 2 to collect payment
+        System.out.println("Check approved. You owe $" + t.pt + " how much will you be paying?");
+        t.pa = scan.nextDouble();
 
+        t.paymentStatus = t.pa;
         // logic behind pay as you go
-        if(pa != triptotal) {
+        if(t.pa != triptotal) {
             payedinFull = false;
             System.out.println("You're Trip is not paid in full. You must pay as you go.");
         }
