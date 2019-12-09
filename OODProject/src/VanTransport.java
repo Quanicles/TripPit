@@ -9,4 +9,9 @@ public class VanTransport implements TransportType {
       this.name = nm;
    }
    
+   @Override
+   public String getTransportName() {
+
+      return name;
+   }
 }   
